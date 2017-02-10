@@ -6,6 +6,7 @@ def initialize(party, name, songs, cash)
 @party = party
 @name = name
 @songs = songs
+@cash = cash
 end
 
 
