@@ -8,4 +8,7 @@ def initialize(title, artist, duration)
 @duration = duration
 end
 
+
+
+
 end

@@ -12,5 +12,9 @@ def empty_room
 
 end
 
+def get_rooms_availability
+
+end
+
 
 end
