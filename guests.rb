@@ -1,21 +1,10 @@
 class Guest
 
-attr_accessor :party, :name, :songs, :cash
+attr_accessor  :name
 
-def initialize(party, name, songs, cash)
-@party = party
+def initialize(name)
 @name = name
-@songs = songs
-@cash = cash
 end
-
-
-
-
-
-
-
-
 
 
 end

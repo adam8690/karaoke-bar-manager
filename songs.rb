@@ -9,6 +9,4 @@ def initialize(title, artist, duration)
 end
 
 
-
-
 end
