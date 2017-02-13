@@ -35,39 +35,43 @@ def run
             "2" => @song2 = Song.new("Sexual", "Neiked", 3.15)}
 
 
-# puts "initialising..."
-# sleep(2)
-# puts "creating song list..."
-# sleep(2)
-# puts "checking rooms..."
-# sleep(2)
-# puts "one moment..."
-# sleep(2)
-# puts "erm..."
-# sleep(2)
-# puts "oh yeah!"
-# sleep(1)
-# system('clear')
-
+system('clear')
+puts "initialising..."
+sleep(2)
+puts "creating song list..."
+sleep(2)
+puts "checking rooms..."
+sleep(2)
+puts "one moment..."
+sleep(1)
+puts "loading logo..."
+sleep(1)
+system('clear')
 puts "
 
+██╗  ██╗ █████╗ ██████╗  █████╗  ██████╗ ██╗  ██╗███████╗
+██║ ██╔╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝
+█████╔╝ ███████║██████╔╝███████║██║   ██║█████╔╝ █████╗  
+██╔═██╗ ██╔══██║██╔══██╗██╔══██║██║   ██║██╔═██╗ ██╔══╝  
+██║  ██╗██║  ██║██║  ██║██║  ██║╚██████╔╝██║  ██╗███████╗
+╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
 
-Hello there, welcome to Karaoke bar management system version 1.0
+Hello there, welcome to Karaoke bar management system version 1.0 by Adam Baxter"
 
 
-"
 exit = "n"
 while exit != "y"
 puts "
 Would you like to: 
 
-1. Check in a guest?
-2. Check out guest?
-3. Clear a room?
-4. Check room availability?
-5. Song lists
+1. Check in a guest.
+2. Check out a guest.
+3. Clear a room.
+4. Check room availability.
+5. See Master song list.
+6. Check room playlists are empty.
 
-X. Exit?
+X. Exit.
 
 Indicate your selection with a number."
 
@@ -99,8 +103,20 @@ when "5"
   for song in @songs.values
     song_mins = song.duration.to_i
     song_secs = (song.duration * 60) % 60
-    puts "#{song.title} - #{song.artist} - #{song_mins}:#{song_secs.to_i.to_s.rjust(2,"0")}"
+    puts "#{@songs.key(song)}: #{song.title} - #{song.artist} - #{song_mins}:#{song_secs.to_i.to_s.rjust(2,"0")}"
   end
+when "6"
+  if @room1.playlist == [] 
+    puts "Room 1: playlist empty, add a song!"
+  else 
+    puts "The playlist is not empty, but there is no way for the runner to add songs yet so I don't know how this could be!"
+  end
+  if @room2.playlist == [] 
+    puts "Room 2: playlist empty, add a song!"
+    else 
+      puts "The playlist is not empty, but there is no way for the runner to add songs yet so I don't know how this could be!"
+  end
+
 when "X"
   puts "Are you sure you want to exit? y/n"
   if gets.chomp == "y"
