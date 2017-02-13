@@ -92,11 +92,13 @@ when "2"
   puts "Room Number?"
   g_room = @rooms[gets.chomp]
   check_out_guest(g_name, g_room)
-  puts "Guest #{g_name} has been checked out of #{g_room}"
+  puts "Guest #{g_name} has been checked out of room"
+  get_rooms_availability(@room1, @room2)
 when "3"
   puts "Room number to clear?"
   room_to_clear = @rooms[gets.chomp]
   clear_room(room_to_clear)
+  get_rooms_availability(@room1, @room2)
 when "4"
   get_rooms_availability(@room1, @room2)
 when "5"
@@ -125,7 +127,7 @@ end
 else puts "Invalid selection, try again."
 end
 
-
+puts "-----------------------------------------------------"
 end
 end
 end
